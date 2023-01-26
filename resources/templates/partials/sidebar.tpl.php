@@ -1,4 +1,4 @@
-<aside class="sidebar">
+<aside class="col-12 col-md-3 sidebar">
     <?php if (is_active_sidebar('sidebar')) : ?>
         <ul>
             <?php dynamic_sidebar('sidebar'); ?>

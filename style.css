@@ -3,7 +3,7 @@ This file is responsible only for providing theme information that are displayed
 in `Apperance > Themes`. Do not write in here any CSS declarations.
 
 Theme Name: Daniel King
-Theme URI: {{ theme.url }}
+Theme URI: https://github.com/dmking0728/daniel-king
 Description: {{ theme.description }}
 Version: {{ theme.version }}
 Author: {{ theme.author }}

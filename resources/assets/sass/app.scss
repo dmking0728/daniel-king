@@ -1,18 +1,28 @@
-// Variables
-// =================================================
-@import 'variables';
+@font-face {
+  font-family: "Gotham Medium";
+  src: url("../fonts/Gotham-Bold.woff2");
+}
 
-// Demo
-// =================================================
-// Delete demo styles below and you are ready
-// to start building your theme styling.
+@font-face {
+  font-family: "Circular Std";
+  src: url("../fonts/CircularStd-Medium.woff2");
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500&display=swap");
+
+// Variables
+@import "variables";
+
 * {
   box-sizing: border-box;
 }
 
 body {
-  font-family: sans-serif;
-  line-height: 1.5;
+  font-family: "Open Sans", sans-serif;
+
+  p {
+    font-weight: 300;
+  }
 }
 
 .app {
@@ -20,13 +30,32 @@ body {
   margin: 0 auto;
   padding: 6rem 0;
 
-  & > * + * { margin-top: 3rem; }
+  & > * + * {
+    margin-top: 3rem;
+  }
 }
 
 .wrapper {
   display: flex;
 
-  & > * + * { margin-left: 3em; }
+  & > * + * {
+    margin-left: 3em;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Gotham Medium";
+  color: $primary;
+  letter-spacing: -1.5px;
+
+  a {
+    color: $primary;
+    text-decoration: none;
+  }
 }
 
 .header {
@@ -56,14 +85,20 @@ body {
   ul {
     padding: 0;
 
-    & > * + * { margin-left: 0.5em; }
+    & > * + * {
+      margin-left: 0.5em;
+    }
 
-    li { display: inline-block; }
+    li {
+      display: inline-block;
+    }
   }
 }
 
 .posts {
-  & > * + * { margin-top: 1.5rem; }
+  & > * + * {
+    margin-top: 1.5rem;
+  }
 }
 
 .thumbnail {
@@ -71,3 +106,97 @@ body {
   justify-content: space-between;
   align-items: center;
 }
+
+.dark-blue-bg {
+  background-color: $primary;
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  li {
+    color: white;
+  }
+}
+
+.off-white-bg {
+  background-color: $off-white;
+}
+
+.green-bg {
+  background-color: $secondary;
+}
+
+.white-bg {
+  background-color: $white;
+}
+
+.is-centered {
+  display: block;
+  margin: 0 auto;
+}
+
+.circle {
+  position: relative;
+  width: max-content;
+  &:after {
+    content: "";
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    -moz-border-radius: 7.5px;
+    -webkit-border-radius: 7.5px;
+    border-radius: 7.5px;
+    background-color: $secondary;
+    position: absolute;
+    bottom: 17px;
+    right: -20px;
+  }
+}
+
+.wp-block-post-excerpt__more-link,
+.btn {
+  background-color: $secondary;
+  color: $primary;
+  padding: 17px 30px;
+  border-radius: 0.375rem;
+  text-decoration: none;
+  border: 1px solid $primary;
+  transition: all 0.4s ease;
+  position: relative;
+  font-weight: 400;
+  &:hover {
+    background-color: $off-white;
+    border: 1px solid $primary;
+  }
+}
+
+#about,
+#skills,
+#projects {
+  &::before {
+    content: "";
+    display: block;
+    height: 95px;
+    margin-top: -95px;
+    visibility: hidden;
+  }
+}
+
+*:focus {
+  outline: 0 !important;
+}
+
+button,
+input[type="button"] {
+  outline: none;
+}
+button::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner {
+  border: 0;
+}
+
+@import "custom-homepage";
+@import "navbar";
+@import "single-post";
+@import "404";

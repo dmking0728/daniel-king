@@ -1,0 +1,31 @@
+.single-post {
+  .content {
+    margin-top: 2rem;
+  }
+
+  .col-12 {
+    flex: 0 0 auto;
+    max-width: 100%;
+  }
+  .sidebar {
+    li.widget_block {
+      padding-bottom: 2rem;
+    }
+
+    .wp-element-button {
+      background-color: $secondary;
+      color: $primary;
+      padding: 12px 27px;
+      border-radius: 0.375rem;
+      text-decoration: none;
+      border: 1px solid $primary;
+      transition: all 0.4s ease;
+      position: relative;
+      font-weight: 400;
+      &:hover {
+        background-color: $off-white;
+        border: 1px solid $primary;
+      }
+    }
+  }
+}

@@ -32,3 +32,24 @@ if ($ok) {
     // they must be under the same dir path.
     (new Tonik\Gin\Foundation\Autoloader($theme->get('config')))->register();
 }
+
+//add class to nav li items
+function add_class_to_nav_li_items($classes, $item, $args) {
+    if($args->theme_location == 'primary' || $args->theme_location == 'secondary' ) {
+      $classes[] = 'nav-item';
+    }
+    return $classes;
+  }
+  add_filter('nav_menu_css_class', 'add_class_to_nav_li_items', 1, 3);
+
+  add_filter( 'nav_menu_link_attributes', function($atts) {
+    $atts['class'] = "nav-link";
+    return $atts;
+}, 100, 1 );
+
+
+function mytheme_excerpt_more( $more ) {
+    return '...';
+}
+add_filter('excerpt_more', 'mytheme_excerpt_more');
+
